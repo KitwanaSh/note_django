@@ -54,7 +54,7 @@ def getRoutes(request):
 
 @api_view(['GET', 'POST'])
 def GetNotes(request):
-    if (request.method == 'GET'):
+    if request.method == 'GET':
         return getNoteList(request)
     
     if request.method == 'POST':
