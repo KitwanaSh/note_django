@@ -16,6 +16,9 @@ from .utils import getNoteList, createNote, getSingleNote, UpdateNote, DeleteNot
 
 @api_view(['GET', 'POST'])
 def GetNotes(request):
+    """
+    GetNotes function to handle GET and POST requests.
+    """
     if request.method == 'GET':
         return getNoteList(request)
     
@@ -25,6 +28,14 @@ def GetNotes(request):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def GetNote(request, pk):
+    """
+    A view function that handles GET, PUT, and DELETE requests for a note with a specific primary key. 
+    Parameters:
+    - request: the request object
+    - pk: the primary key of the note
+    Return types:
+    - Response object
+    """
     if request.method == 'GET':
         return getSingleNote(request, pk)
     
